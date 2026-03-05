@@ -118,9 +118,6 @@ class QueryWriter:
         
         prompt = prompt.strip()
         
-        # Relevance check
-        if not self._is_relevant_question(prompt):
-            return "SELECT 'I can only answer questions about the bike store database (products, customers, orders, stores, staff, inventory)' AS message;"
         schema_text = self._format_schema()
         samples = self._get_sample_values(limit=3)
         samples_text = self._format_samples(samples)
